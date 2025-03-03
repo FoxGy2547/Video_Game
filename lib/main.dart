@@ -26,7 +26,7 @@ class VideoGameApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Video Game App',
+      title: 'แอพวิดีโอเกม',
       theme: ThemeData(
         // This is the theme of your application.
         //
