@@ -168,9 +168,26 @@ class _AddPageState extends State<AddPage> {
   final List<String> genres = [
     'Action',
     'Adventure',
-    'RPG',
-    'Strategy',
     'Sports',
+    'Simulation',
+    'Platformer',
+    'RPG',
+    'First Person Shooter',
+    'Action-Adventure',
+    'Fighting',
+    'Real-Time Strategy',
+    'Racing',
+    'Shooter',
+    'Puzzle',
+    'Casual',
+    'Strategy',
+    'MMORPG',
+    'Stealth',
+    'Party',
+    'Action RPG',
+    'Tactical RPG',
+    'Survival',
+    'Battle Royale',
   ];
 
   @override
