@@ -73,6 +73,57 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<VideoGame> games = [];
 
+  IconData _getGenreIcon(String genre) {
+    switch (genre) {
+      case 'Action':
+        return Icons.local_fire_department;
+      case 'Adventure':
+        return Icons.explore;
+      case 'Sports':
+        return Icons.sports_soccer;
+      case 'Simulation':
+        return Icons.computer;
+      case 'Platformer':
+        return Icons.run_circle;
+      case 'RPG':
+        return Icons.shield;
+      case 'First Person Shooter':
+        return Icons.remove_red_eye;
+      case 'Action-Adventure':
+        return Icons.directions_run;
+      case 'Fighting':
+        return Icons.sports_mma;
+      case 'Real-Time Strategy':
+        return Icons.hourglass_top;
+      case 'Racing':
+        return Icons.directions_car;
+      case 'Shooter':
+        return Icons.gps_fixed;
+      case 'Puzzle':
+        return Icons.extension;
+      case 'Casual':
+        return Icons.tag_faces;
+      case 'Strategy':
+        return Icons.account_tree;
+      case 'MMORPG':
+        return Icons.group;
+      case 'Stealth':
+        return Icons.visibility_off;
+      case 'Party':
+        return Icons.celebration;
+      case 'Action RPG':
+        return Icons.bolt;
+      case 'Tactical RPG':
+        return Icons.account_tree;
+      case 'Survival':
+        return Icons.health_and_safety;
+      case 'Battle Royale':
+        return Icons.person_pin_circle;
+      default:
+        return Icons.videogame_asset;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -112,7 +163,12 @@ class _HomePageState extends State<HomePage> {
                             content: Text('${game.title} ถูกลบออกเรียบร้อย')),
                       );
                     },
-                    background: Container(color: Colors.red),
+                    background: Container(
+                      color: Colors.red,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      alignment: Alignment.centerRight,
+                      child: const Icon(Icons.delete, color: Colors.white),
+                    ),
                     child: Container(
                       margin: const EdgeInsets.symmetric(vertical: 4.0),
                       decoration: BoxDecoration(
@@ -126,6 +182,11 @@ class _HomePageState extends State<HomePage> {
                         title: Text(game.title),
                         subtitle: Text(
                             'คะแนนรีวิว: ${game.rating} | ประเภทของเกม: ${game.genre}'),
+                        trailing: Icon(
+                          _getGenreIcon(game.genre),
+                          color: Theme.of(context).colorScheme.primary,
+                          size: 30,
+                        ),
                       ),
                     ),
                   );
